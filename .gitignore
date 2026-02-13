@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Datasets
+*.csv
+*.tsv
+*.dat
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# Plots and outputs
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.svg
+
+# Models
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.pb
+*.onnx
+models/
+checkpoints/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
