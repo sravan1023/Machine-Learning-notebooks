@@ -82,7 +82,7 @@ def categorical_cross_entropy_gradient(y_true, y_pred):
     return y_pred - y_true
 
 
-# ── Registry for convenient lookup ───────────────────────────────────
+# Registry for convenient lookup
 LOSSES = {
     "binary_cross_entropy": (binary_cross_entropy,
                              binary_cross_entropy_gradient),
