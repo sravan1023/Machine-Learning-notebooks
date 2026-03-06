@@ -45,7 +45,6 @@ class DenseLayer:
         self.dW = None
         self.db = None
 
-    # ------------------------------------------------------------------
     def forward(self, X):
         """Compute the layer output.
 
@@ -64,7 +63,7 @@ class DenseLayer:
         self.a = self.act_fn(self.z)         # (m, n_out)
         return self.a
 
-    # ------------------------------------------------------------------
+
     def backward(self, da):
         """Compute gradients and propagate error to previous layer.
 
@@ -93,7 +92,6 @@ class DenseLayer:
         da_prev = dz @ self.W.T
         return da_prev
 
-    # ------------------------------------------------------------------
     def __repr__(self):
         n_in, n_out = self.W.shape
         return (f"DenseLayer(n_in={n_in}, n_out={n_out}, "
