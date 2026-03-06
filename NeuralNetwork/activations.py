@@ -85,7 +85,7 @@ def softmax(z):
     return exp_z / np.sum(exp_z, axis=1, keepdims=True)
 
 
-# ── Registry for convenient lookup ───────────────────────────────────
+# Registry for convenient lookup
 ACTIVATIONS = {
     "relu": (relu, relu_derivative),
     "sigmoid": (sigmoid, sigmoid_derivative),
