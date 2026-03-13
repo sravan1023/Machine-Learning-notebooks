@@ -48,7 +48,13 @@ class RegressionTreeRegressor:
             vals = np.unique(X[:, j])
             if len(vals) < 2:
                 continue
-            thresholds = (vals[:-1] + vals[1:]) / 2.0
+
+            # Limit candidate thresholds for speed on medium-sized datasets.
+            if len(vals) > 16:
+                q = np.linspace(0.1, 0.9, 8)
+                thresholds = np.unique(np.quantile(vals, q))
+            else:
+                thresholds = (vals[:-1] + vals[1:]) / 2.0
 
             for thr in thresholds:
                 left_idx = np.where(X[:, j] <= thr)[0]
