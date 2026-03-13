@@ -27,7 +27,7 @@ def load_datasets(test_size=0.3, random_state=42):
 
 
 def sweep_n_estimators(X_train, y_train, X_test, y_test,
-                       n_values=(10, 25, 50, 100, 150),
+                       n_values=(5, 10, 20, 40),
                        learning_rate=0.1, max_depth=2, random_state=42):
     train_accs, test_accs = [], []
     for n in n_values:
@@ -45,7 +45,7 @@ def sweep_n_estimators(X_train, y_train, X_test, y_test,
 
 def sweep_learning_rate(X_train, y_train, X_test, y_test,
                         lr_values=(0.01, 0.05, 0.1, 0.2, 0.5),
-                        n_estimators=100, max_depth=2, random_state=42):
+                        n_estimators=40, max_depth=2, random_state=42):
     results = {}
     for lr in lr_values:
         gb = GradientBoostingClassifier(
@@ -64,8 +64,8 @@ def sweep_learning_rate(X_train, y_train, X_test, y_test,
 
 
 def sweep_depth(X_train, y_train, X_test, y_test,
-                depth_values=(1, 2, 3, 4),
-                n_estimators=100, learning_rate=0.1, random_state=42):
+                depth_values=(1, 2, 3),
+                n_estimators=40, learning_rate=0.1, random_state=42):
     train_accs, test_accs = [], []
     for d in depth_values:
         gb = GradientBoostingClassifier(
