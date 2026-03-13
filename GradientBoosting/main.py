@@ -82,7 +82,7 @@ def plot_lr_loss(lr_sweep, name):
 def plot_confusion(y_true, y_pred, target_names, name):
     cm, _ = confusion_matrix(y_true, y_pred)
     fig, ax = plt.subplots(figsize=(6, 5))
-    im = ax.imshow(cm, interpolation="nearest", cmap=plt.cm.Blues)
+    im = ax.imshow(cm, interpolation="nearest")
     fig.colorbar(im, ax=ax)
 
     ticks = np.arange(len(target_names))
